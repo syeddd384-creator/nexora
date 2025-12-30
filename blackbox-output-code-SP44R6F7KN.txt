@@ -1,0 +1,23 @@
+'use client';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+
+export default function Home() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-black">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="text-center"
+      >
+        <h1 className="text-5xl font-bold text-purple-400 mb-4">Buy & Sell AI Agents</h1>
+        <p className="text-xl mb-8">Discover, purchase, and create powerful AI agents in a premium marketplace.</p>
+        <div className="space-x-4">
+          <Link href="/marketplace" className="bg-purple-600 px-6 py-3 rounded-lg hover:bg-purple-700">View Agents</Link>
+          <Link href="/dashboard" className="bg-gray-700 px-6 py-3 rounded-lg hover:bg-gray-600">Become a Seller</Link>
+        </div>
+      </motion.div>
+    </div>
+  );
+}

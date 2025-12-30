@@ -1,0 +1,13 @@
+import Link from 'next/link';
+
+export default function AgentCard({ agent }) {
+  return (
+    <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+      <img src={agent.image || '/placeholder.jpg'} alt={agent.title} className="w-full h-48 object-cover rounded" />
+      <h3 className="text-xl font-bold mt-4">{agent.title}</h3>
+      <p className="text-gray-400">{agent.description}</p>
+      <p className="text-purple-400">${agent.price}</p>
+      <Link href={`/agents/${agent._id}`} className="mt-4 inline-block bg-purple-600 px-4 py-2 rounded">View Details</Link>
+    </div>
+  );
+}
